@@ -154,14 +154,22 @@ export default function Default() {
         />
       </SimpleGrid>
       {jobsData.length > 0 ? (
-        <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb="20px">
-          <CheckTable
-            tableData={jobsData.length > 0 ? jobsData : tableDataCheck}
-          />
-          <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px">
-            <PieCard />
+        <>
+          <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb="20px">
+            <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px">
+              {analyticData ? (
+                <PieCard pieData={analyticData} />
+              ) : (
+                <div>No Data</div>
+              )}
+            </SimpleGrid>
           </SimpleGrid>
-        </SimpleGrid>
+          <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb="20px">
+            <CheckTable
+              tableData={jobsData.length > 0 ? jobsData : tableDataCheck}
+            />
+          </SimpleGrid>
+        </>
       ) : (
         <div> No Data </div>
       )}

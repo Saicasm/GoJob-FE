@@ -310,7 +310,7 @@ export const barChartOptionsConsumption: ApexGeneric = {
 
 export const pieChartOptions: ApexGeneric = {
   labels: ['Applied', 'Rejected', 'In Progress'],
-  colors: ['#27474E', '#BFD7B5', '#292F36'],
+  colors: ['#27474E', '#9e2a2b', '#292F36'],
   chart: {
     width: '50px',
   },
@@ -339,7 +339,7 @@ export const pieChartOptions: ApexGeneric = {
     },
   },
   fill: {
-    colors: ['#27474E', '#BFD7B5', '#292F36'],
+    colors: ['#27474E', '#9e2a2b', '#292F36'],
   },
   tooltip: {
     enabled: true,
@@ -376,7 +376,7 @@ export const lineChartOptionsTotalSpent: ApexOptions = {
       color: '#4318FF',
     },
   },
-  colors: ['#4318FF', '#39B8FF'],
+  colors: ['#27474E', '#39B8FF'],
   markers: {
     size: 0,
     colors: 'white',

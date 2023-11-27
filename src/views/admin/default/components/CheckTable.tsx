@@ -22,7 +22,7 @@ import {
   SortingState,
   useReactTable,
 } from '@tanstack/react-table';
-
+import axios from 'axios';
 // Custom components
 import Card from 'components/card/Card';
 import Menu from 'components/menu/MainMenu';
@@ -32,13 +32,26 @@ type RowObj = {
   compensation: string;
   location: string;
   score: number;
-  date: string;
+  skills: string;
   status: string;
-  info: boolean;
+  title: boolean;
 };
 
 const columnHelper = createColumnHelper<RowObj>();
-
+const updateJob = async (row: any, val: any) => {
+  try {
+    var payload = row;
+    payload.status = val;
+    const response = await axios.put(
+      `http://localhost:8080/api/v1/ingest/${row._id}`,
+      payload,
+    );
+    // Replace with your API endpoint
+    // setJobData(response.data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
 // const columns = columnsDataCheck;
 export default function CheckTable(props: { tableData: any }) {
   const { tableData } = props;
@@ -68,35 +81,39 @@ export default function CheckTable(props: { tableData: any }) {
         </Text>
       ),
     }),
-    // columnHelper.accessor('status', {
-    //   id: 'status',
-    //   header: () => (
-    //     <Text
-    //       justifyContent="space-between"
-    //       align="center"
-    //       fontSize={{ sm: '10px', lg: '12px' }}
-    //       color="gray.400"
-    //     >
-    //       Status
-    //     </Text>
-    //   ),
-    //   cell: (info: any) => (
-    //     <Flex align="center" color="white">
-    //       <Select
-    //         fontSize="sm"
-    //         variant="subtle"
-    //         defaultValue="INTERESTED"
-    //         width="unset"
-    //         fontWeight="700"
-    //       >
-    //         <option value="INTERESTED">Interested</option>
-    //         <option value="APPLIED">Applied</option>
-    //         <option value="IN_PROGRESS">In Progress</option>
-    //         <option value="REJECTED">Rejected</option>
-    //       </Select>
-    //     </Flex>
-    //   ),
-    // }),
+    columnHelper.accessor('status', {
+      id: 'status',
+      header: () => (
+        <Text
+          justifyContent="space-between"
+          align="center"
+          fontSize={{ sm: '10px', lg: '12px' }}
+          color="gray.400"
+        >
+          Status
+        </Text>
+      ),
+      cell: (info: any) => (
+        <Flex align="center" color="white">
+          <Select
+            fontSize="sm"
+            variant="subtle"
+            defaultValue={info.getValue()}
+            width="unset"
+            fontWeight="700"
+            onChange={(e) => {
+              updateJob(info.row.original, e.target.value);
+              console.log('e', e.target.value);
+            }}
+          >
+            <option value="INTERESTED">Interested</option>
+            <option value="APPLIED">Applied</option>
+            <option value="IN_PROGRESS">In Progress</option>
+            <option value="REJECTED">Rejected</option>
+          </Select>
+        </Flex>
+      ),
+    }),
     columnHelper.accessor('compensation', {
       id: 'compensation',
       header: () => (
@@ -147,12 +164,12 @@ export default function CheckTable(props: { tableData: any }) {
       ),
       cell: (info) => (
         <Text color={textColor} fontSize="sm" fontWeight="700">
-          {info.getValue()}
+          {Number(info.getValue()).toFixed(2)}
         </Text>
       ),
     }),
-    columnHelper.accessor('date', {
-      id: 'date',
+    columnHelper.accessor('title', {
+      id: 'title',
       header: () => (
         <Text
           justifyContent="space-between"
@@ -160,12 +177,30 @@ export default function CheckTable(props: { tableData: any }) {
           fontSize={{ sm: '10px', lg: '12px' }}
           color="gray.400"
         >
-          DATE
+          TITLE
         </Text>
       ),
       cell: (info) => (
         <Text color={textColor} fontSize="sm" fontWeight="700">
           {info.getValue()}
+        </Text>
+      ),
+    }),
+    columnHelper.accessor('skills', {
+      id: 'skills',
+      header: () => (
+        <Text
+          justifyContent="space-between"
+          align="center"
+          fontSize={{ sm: '10px', lg: '12px' }}
+          color="gray.400"
+        >
+          SKILLS
+        </Text>
+      ),
+      cell: (info) => (
+        <Text color={textColor} fontSize="sm" fontWeight="700">
+          {info.getValue().toString()}
         </Text>
       ),
     }),

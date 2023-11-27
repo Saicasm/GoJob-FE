@@ -5,8 +5,17 @@ import Card from 'components/card/Card';
 import PieChart from 'components/charts/PieChart';
 import { pieChartData, pieChartOptions } from 'variables/charts';
 import { VSeparator } from 'components/separator/Separator';
-export default function Conversion(props: { [x: string]: any }) {
-  const { ...rest } = props;
+
+// props: {
+//   startContent?: JSX.Element;
+//   endContent?: JSX.Element;
+//   name: string;
+//   growth?: string | number;
+//   value: string | number;
+// }
+export default function Conversion(props: { pieData: any }) {
+  const { pieData, ...rest } = props;
+  console.log('Pidatye', pieData);
 
   // Chakra Color Mode
   const textColor = useColorModeValue('secondaryGray.900', 'white');
@@ -47,13 +56,17 @@ export default function Conversion(props: { [x: string]: any }) {
           <option value="yearly">Yearly</option>
         </Select> */}
       </Flex>
+      {pieData.count ? (
+        <PieChart
+          h="100%"
+          w="100%"
+          chartData={[pieData.applied, pieData.rejected, pieData.in_progress]}
+          chartOptions={pieChartOptions}
+        />
+      ) : (
+        <></>
+      )}
 
-      <PieChart
-        h="100%"
-        w="100%"
-        chartData={pieChartData}
-        chartOptions={pieChartOptions}
-      />
       <Card
         bg={cardColor}
         flexDirection="row"
@@ -66,7 +79,7 @@ export default function Conversion(props: { [x: string]: any }) {
       >
         <Flex direction="column" py="5px">
           <Flex align="center">
-            <Box h="8px" w="8px" bg="brand.500" borderRadius="50%" me="4px" />
+            <Box h="8px" w="8px" bg="#27474E" borderRadius="50%" me="4px" />
             <Text
               fontSize="xs"
               color="secondaryGray.600"
@@ -77,13 +90,13 @@ export default function Conversion(props: { [x: string]: any }) {
             </Text>
           </Flex>
           <Text fontSize="lg" color={textColor} fontWeight="700">
-            63%
+            {Number((pieData.applied / pieData.count) * 100).toFixed(2)}%
           </Text>
         </Flex>
         <VSeparator mx={{ base: '60px', xl: '60px', '2xl': '60px' }} />
         <Flex direction="column" py="5px" me="10px">
           <Flex align="center">
-            <Box h="8px" w="8px" bg="#6AD2FF" borderRadius="50%" me="4px" />
+            <Box h="8px" w="8px" bg="#9e2a2b" borderRadius="50%" me="4px" />
             <Text
               fontSize="xs"
               color="secondaryGray.600"
@@ -94,7 +107,7 @@ export default function Conversion(props: { [x: string]: any }) {
             </Text>
           </Flex>
           <Text fontSize="lg" color={textColor} fontWeight="700">
-            25%
+            {Number((pieData.rejected / pieData.count) * 100).toFixed(2)}%
           </Text>
         </Flex>
       </Card>
