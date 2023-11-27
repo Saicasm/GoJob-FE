@@ -11,7 +11,7 @@ function AuthIllustration(props: {
   children: ReactNode;
   illustrationBackground: string;
 }) {
-  const authBg = useColorModeValue('white', 'navy.900');
+  const authBg = useColorModeValue('white', 'bg.dark.primary');
   const { children, illustrationBackground } = props;
   // Chakra color mode
   return (
@@ -78,7 +78,7 @@ function AuthIllustration(props: {
             borderBottomLeftRadius={{ lg: '120px', xl: '200px' }}
           />
         </Box>
-        <Footer mb={{ xl: '3vh' }} />
+        {/* <Footer mb={{ xl: '3vh' }} /> */}
       </Flex>
       <FixedPlugin />
     </Flex>

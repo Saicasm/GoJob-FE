@@ -56,8 +56,8 @@ import tableDataComplex from 'views/admin/rtl/variables/tableDataComplex';
 
 export default function UserReports() {
   // Chakra Color Mode
-  const brandColor = useColorModeValue('brand.500', 'white');
-  const boxBg = useColorModeValue('secondaryGray.300', 'whiteAlpha.100');
+  const brandColor = useColorModeValue('brand.500', 'accent.primary');
+  const boxBg = useColorModeValue('secondaryGray.300', 'bg.dark.secondary');
   return (
     <Box pt={{ base: '130px', md: '120px', xl: '120px' }}>
       <SimpleGrid

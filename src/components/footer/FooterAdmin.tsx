@@ -26,7 +26,7 @@ export default function Footer() {
       px={{ base: '30px', md: '50px' }}
       pb="30px"
     >
-      <Text
+      {/* <Text
         color={textColor}
         textAlign={{
           base: 'center',
@@ -48,8 +48,8 @@ export default function Footer() {
             Simmmple!
           </Link>
         </Text>
-      </Text>
-      <List display="flex">
+      </Text> */}
+      {/* <List display="flex">
         <ListItem
           me={{
             base: '20px',
@@ -101,7 +101,7 @@ export default function Footer() {
             Blog
           </Link>
         </ListItem>
-      </List>
+      </List> */}
     </Flex>
   );
 }

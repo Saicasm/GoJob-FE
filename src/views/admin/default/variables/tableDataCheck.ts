@@ -1,47 +1,166 @@
 type RowObj = {
-	name: [string, boolean];
-	progress: string;
-	quantity: number;
-	date: string;
-	info: boolean;
+  _id: string;
+  company_name: string;
+  title: string;
+  skills: string[];
+  job_description: string;
+  user_id: string;
+  status: string;
+  created_at: string;
+  updated_at: string;
+  score: string;
+  compensation: string;
+  location: string;
 };
 
 const tableDataCheck: RowObj[] = [
-	{
-		name: [ 'Horizon UI PRO', true ],
-		quantity: 2458,
-		progress: '17.5%',
-		date: '12 Jan 2021',
-		info: true
-	},
-	{
-		name: [ 'Horizon UI Free', true ],
-		quantity: 1485,
-		progress: '10.8%',
-		date: '21 Feb 2021',
-		info: true
-	},
-	{
-		name: [ 'Weekly Update', true ],
-		quantity: 1024,
-		progress: '21.3%',
-		date: '13 Mar 2021',
-		info: true
-	},
-	{
-		name: [ 'Venus 3D Asset', true ],
-		quantity: 858,
-		progress: '31.5%',
-		date: '24 Jan 2021',
-		info: true
-	},
-	{
-		name: [ 'Marketplace', true ],
-		quantity: 258,
-		progress: '12.2%',
-		date: '24 Oct 2022',
-		info: true
-	}
+  {
+    _id: '65639d03c19b7af10054ab8a',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:15.088Z',
+    updated_at: '2023-11-26T19:31:15.088Z',
+  },
+  {
+    _id: '65639d03c19b7af10054ab8c',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:15.273Z',
+    updated_at: '2023-11-26T19:31:15.273Z',
+  },
+  {
+    _id: '65639d03c19b7af10054ab8e',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:15.434Z',
+    updated_at: '2023-11-26T19:31:15.434Z',
+  },
+  {
+    _id: '65639d03c19b7af10054ab90',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:15.61Z',
+    updated_at: '2023-11-26T19:31:15.61Z',
+  },
+  {
+    _id: '65639d03c19b7af10054ab92',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:15.771Z',
+    updated_at: '2023-11-26T19:31:15.771Z',
+  },
+  {
+    _id: '65639d03c19b7af10054ab94',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:15.93Z',
+    updated_at: '2023-11-26T19:31:15.93Z',
+  },
+  {
+    _id: '65639d04c19b7af10054ab96',
+    company_name: 'ByteDance',
+    compensation: '$60/yr',
+    title:
+      'Software Engineer Intern (Developer Infrastructure) - 2024 Summer (PhD)',
+    skills: ['Pytorch', 'Tensorflow', 'R', 'Python', 'Go'],
+    job_description: '',
+    location: 'San Jose, CA Reposted',
+    score: '38.285714285714285',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:31:16.095Z',
+    updated_at: '2023-11-26T19:31:16.095Z',
+  },
+  {
+    _id: '65639f9a20acc93857323043',
+    company_name: 'Oracle',
+    compensation: '$18.99/hr-$38.32/hrR',
+    title: 'Software Engineer Intern - Corporate Architecture',
+    skills: ['Oracle', 'Java', 'C++', 'Python', 'go'],
+    job_description: '',
+    location: 'United States Reposted',
+    score: '64.42857142857143',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:42:18.863Z',
+    updated_at: '2023-11-26T19:42:18.863Z',
+  },
+  {
+    _id: '6563a05020acc93857323046',
+    company_name: 'Oracle',
+    compensation: '$18.99/hr-$38.32/hrR',
+    title: 'Software Engineer Intern - Corporate Architecture',
+    skills: ['Oracle', 'Java', 'C++', 'Python', 'go'],
+    job_description: '',
+    location: 'United States Reposted',
+    score: '68.875',
+    user_id: 'saicsm@gmail.com',
+    status: 'INTERESTED',
+    created_at: '2023-11-26T19:45:20.052Z',
+    updated_at: '2023-11-26T19:45:20.052Z',
+  },
+  {
+    _id: '6563a06b20acc93857323049',
+    company_name: 'Oracle',
+    compensation: '$18.99/hr-$38.32/hrR',
+    title: 'Software Engineer Intern - Corporate Architecture',
+    skills: ['Oracle', 'Java', 'C++', 'Python', 'go'],
+    job_description: '',
+    location: 'United States Reposted',
+    score: '72.33333333333333',
+    user_id: 'saicsm@gmail.com',
+    status: 'IN_PROGRESS',
+    created_at: '2023-11-26T19:45:47.618Z',
+    updated_at: '2023-11-26T19:45:47.618Z',
+  },
 ];
 
 export default tableDataCheck;

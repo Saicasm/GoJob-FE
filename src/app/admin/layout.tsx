@@ -36,7 +36,7 @@ export default function AdminLayout(props: DashboardLayoutProps) {
     window.document.documentElement.dir = 'ltr';
   });
 
-  const bg = useColorModeValue('secondaryGray.300', 'navy.900');
+  const bg = useColorModeValue('secondaryGray.300', 'bg.dark.primary');
 
   return (
     <Box h="100vh" w="100vw" bg={bg}>
