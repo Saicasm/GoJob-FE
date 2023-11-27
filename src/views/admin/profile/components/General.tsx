@@ -17,14 +17,16 @@ export default function GeneralInformation(props: { [x: string]: any }) {
   );
 
   const [profileData, setProfileData] = useState({});
+  const [skills, setSkillsData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:8080/api/v1/ingest/user/sai@gmail1.com',
+          'http://localhost:8080/api/v1/ingest/user/sai@gmail.com',
         ); // Replace with your API endpoint
         setProfileData(response.data[0]);
+        setSkillsData(response.data[0].skills);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -64,7 +66,7 @@ export default function GeneralInformation(props: { [x: string]: any }) {
         <Information
           boxShadow={cardShadow}
           title="Skills"
-          value={profileData.skills}
+          value={skills.toString()}
         />
         <Information
           boxShadow={cardShadow}

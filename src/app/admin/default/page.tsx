@@ -72,7 +72,7 @@ export default function Default() {
     fetchData();
   }, []);
   return (
-    <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
+    <Box pt={{ base: '130px', md: '80px', xl: '180px' }}>
       {/* <div>
         <h1>Next.js + Axios Example</h1>
         <pre>{JSON.stringify(jobsData, null, 2)}</pre>
@@ -155,7 +155,7 @@ export default function Default() {
       </SimpleGrid>
       {jobsData.length > 0 ? (
         <>
-          <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb="20px">
+          <SimpleGrid gap="20px" mb="20px">
             <SimpleGrid columns={{ base: 1, md: 2, xl: 2 }} gap="20px">
               {analyticData ? (
                 <PieCard pieData={analyticData} />
@@ -164,7 +164,7 @@ export default function Default() {
               )}
             </SimpleGrid>
           </SimpleGrid>
-          <SimpleGrid columns={{ base: 1, md: 1, xl: 2 }} gap="20px" mb="20px">
+          <SimpleGrid mb="20px">
             <CheckTable
               tableData={jobsData.length > 0 ? jobsData : tableDataCheck}
             />

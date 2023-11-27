@@ -31,7 +31,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
   const navbarIcon = useColorModeValue('gray.400', 'white');
-  let menuBg = useColorModeValue('white', 'navy.800');
+  let menuBg = useColorModeValue('white', 'bg.dark.primary');
   const textColor = useColorModeValue('secondaryGray.900', 'white');
   const textColorBrand = useColorModeValue('brand.700', 'brand.400');
   const ethColor = useColorModeValue('gray.700', 'white');
@@ -55,7 +55,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
       borderRadius="30px"
       boxShadow={shadow}
     >
-      <SearchBar
+      {/* <SearchBar
         mb={() => {
           if (secondary) {
             return { base: '10px', md: 'unset' };
@@ -64,7 +64,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
         }}
         me="10px"
         borderRadius="30px"
-      />
+      /> */}
       <Flex
         bg={ethBg}
         display={secondary ? 'flex' : 'none'}
@@ -122,7 +122,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
           minW={{ base: 'unset', md: '400px', xl: '450px' }}
           maxW={{ base: '360px', md: 'unset' }}
         >
-          <Flex w="100%" mb="20px">
+          {/* <Flex w="100%" mb="20px">
             <Text fontSize="md" fontWeight="600" color={textColor}>
               Notifications
             </Text>
@@ -135,8 +135,8 @@ export default function HeaderLinks(props: { secondary: boolean }) {
             >
               Mark all read
             </Text>
-          </Flex>
-          <Flex flexDirection="column">
+          </Flex> */}
+          {/* <Flex flexDirection="column">
             <MenuItem
               _hover={{ bg: 'none' }}
               _focus={{ bg: 'none' }}
@@ -155,7 +155,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
             >
               <ItemContent info="Horizon Design System Free" />
             </MenuItem>
-          </Flex>
+          </Flex> */}
         </MenuList>
       </Menu>
 
@@ -170,7 +170,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
             me="10px"
           />
         </MenuButton>
-        <MenuList
+        {/* <MenuList
           boxShadow={shadow}
           p="20px"
           me={{ base: '30px', md: 'unset' }}
@@ -218,7 +218,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
               </Button>
             </Link>
           </Flex>
-        </MenuList>
+        </MenuList> */}
       </Menu>
 
       <Button
@@ -244,18 +244,18 @@ export default function HeaderLinks(props: { secondary: boolean }) {
           <Box
             _hover={{ cursor: 'pointer' }}
             color="white"
-            bg="#11047A"
+            bg="#45a29e"
             w="40px"
             h="40px"
             borderRadius={'50%'}
           />
           <Center top={0} left={0} position={'absolute'} w={'100%'} h={'100%'}>
             <Text fontSize={'xs'} fontWeight="bold" color={'white'}>
-              AP
+              SKN
             </Text>
           </Center>
         </MenuButton>
-        <MenuList
+        {/* <MenuList
           boxShadow={shadow}
           p="0px"
           mt="10px"
@@ -305,7 +305,7 @@ export default function HeaderLinks(props: { secondary: boolean }) {
               <Text fontSize="sm">Log out</Text>
             </MenuItem>
           </Flex>
-        </MenuList>
+        </MenuList> */}
       </Menu>
     </Flex>
   );
